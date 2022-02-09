@@ -41,13 +41,7 @@ class ProdAdapter (
         viewHolder.name.text = dataSource[position].name
         viewHolder.ImagePro.setImageDrawable(context.getDrawable(dataSource[position].ImageProd))
 
-//       Glide.with(context)
-//        (context.getDrawable(dataSource[position].ImageProd))
 
-//            .diskCacheStrategy(DiskCacheStrategy.ALL)
-//            .centerCrop()
-//            .circleCrop()
-//            .into(viewHolder.ImageProd)
 
         viewHolder.root.setOnClickListener{
             onListHitItemClickListener.invoke(dataSource[position])
