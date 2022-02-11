@@ -10,12 +10,11 @@ import com.patycorona.shopmark.databinding.ActivityMainBinding
 import com.patycorona.shopmark.models.Prod
 import com.patycorona.shopmark.models.ProdResult
 import com.patycorona.shopmark.viewmodel.ProdViewModel
-import com.patycorona.shopmark.views.Adapter.ProdAdapter
+import com.patycorona.shopmark.views.adapter.ProdAdapter
 import androidx.recyclerview.widget.DefaultItemAnimator
 
 
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

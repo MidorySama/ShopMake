@@ -1,18 +1,15 @@
-package com.patycorona.shopmark.views.Adapter
+package com.patycorona.shopmark.views.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-
-//import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.patycorona.shopmark.R
 import com.patycorona.shopmark.models.Prod
 
@@ -39,7 +36,16 @@ class ProdAdapter (
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         viewHolder.name.text = dataSource[position].name
-        viewHolder.ImagePro.setImageDrawable(context.getDrawable(dataSource[position].ImageProd))
+        //viewHolder.ImagePro.setImageDrawable(context.getDrawable(dataSource[position].ImageProd))
+
+
+        Glide.with(context)// Asi se cargan las imagenes de la nube
+            //.load(context.getDrawable(dataSource[position].productPhoto))
+            .load(dataSource[position].ImageProd)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .centerCrop()
+            .circleCrop()
+            .into(viewHolder.ImagePro)
 
 
 
